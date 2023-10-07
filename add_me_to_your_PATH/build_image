@@ -52,6 +52,10 @@ else
     BUILD_ARGS+=(--push)
 fi
 
+if [[ -n "$MOUNT_SSH" ]]; then
+    BUILD_ARGS+=(--ssh $MOUNT_SSH)
+fi
+
 
 [[ -f Project.toml ]] || {
     bail "no Project.toml found in $PWD"
